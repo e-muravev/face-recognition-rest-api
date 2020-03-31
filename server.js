@@ -19,7 +19,12 @@ const clarifai = new Clarifai.App({
 
 // Check and create default DATABASE-------------------------------------------
 // Setting up a connection
-const sequelize = new Sequelize('postgres://ciarpotxucteoz:c6b91626eef48d0bc5469704f81aae92e39faaa9b77f898417640d5c5adc6fe1@ec2-52-23-14-156.compute-1.amazonaws.com:5432/d1u9mcucm6a5g9')
+// -- "postgres://ciarpotxucteoz:c6b91626eef48d0bc5469704f81aae92e39faaa9b77f898417640d5c5adc6fe1@ec2-52-23-14-156.compute-1.amazonaws.com:
+//    5432/d1u9mcucm6a5g9"   ---- this is for sequlize heroku . e.g const sequelize = new Sequelize (put here)
+const sequelize = new Sequelize('photo-recognition', 'postgres', '123', {
+  host: 'localhost',
+  dialect: 'postgres'
+});
 
 //Testing the connection
 	sequelize
